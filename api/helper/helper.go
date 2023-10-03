@@ -15,13 +15,13 @@ func RemoveDomainError(url string) bool {
 	if url == os.Getenv("DOMAIN"){
 		return false
 	}
-	newURL:=strings.Replace(url,"http:/","",1)
-	newURL1:=strings.Replace(newURL,"https:/","",1)
-	newURL2:=strings.Split(newURL1,"/")[0]
-	//newURL:=strings.Replace(newURL,"www.","",1)
+	finalURL:=strings.Replace(url,"http:/","",1)
+	finalURL=strings.Replace(finalURL,"https:/","",1)
+	finalURL=strings.Replace(finalURL,"www.","",1)
+	finalURL=strings.Split(finalURL,"/")[0]
 
-	
-	if newURL2 == os.Getenv("DOMAIN"){
+
+	if finalURL == os.Getenv("DOMAIN"){
 		return false
 	}
 	
